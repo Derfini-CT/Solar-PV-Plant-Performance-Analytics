@@ -1,0 +1,4 @@
+*.csv
+*.pbix
+BR-PVGen_inverter/
+BR-PVGen_meteorological/
