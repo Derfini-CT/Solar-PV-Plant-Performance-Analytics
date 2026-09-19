@@ -1,16 +1,32 @@
-\# Solar PV Plant Performance \& Efficiency Analytics Using Power BI
+\# ☀️ Solar PV Plant Performance \& Efficiency Analytics Using Power BI
 
 
 
-\## 📊 Project Overview
+\## 📌 Project Overview
 
 
 
-This project analyzes the performance and efficiency of solar photovoltaic (PV) plants using Power BI.
+This project focuses on analyzing the performance and efficiency of solar photovoltaic (PV) plants using Power BI.
 
 
 
-The dashboard combines solar energy generation, irradiance, temperature, wind conditions, plant capacity, and structural characteristics to identify performance variations and factors affecting solar energy generation.
+The dashboard combines solar power generation, irradiance, temperature, wind and plant metadata to identify performance variations, compare solar plants and understand the factors affecting energy generation.
+
+
+
+\---
+
+
+
+\## 🎯 Problem Statement
+
+
+
+To analyze and evaluate the performance of solar PV plants using power generation, irradiance, temperature and environmental data in order to identify performance variations, determine factors affecting energy efficiency and provide actionable insights.
+
+
+
+\---
 
 
 
@@ -18,17 +34,25 @@ The dashboard combines solar energy generation, irradiance, temperature, wind co
 
 
 
-\- Analyze solar energy generation
+\- Analyze solar energy generation across photovoltaic plants
 
-\- Compare performance across solar plants
+\- Compare plant-wise and state-wise performance
 
-\- Study irradiance and weather conditions
+\- Study the relationship between irradiance and energy generation
 
-\- Evaluate plant performance and efficiency
+\- Analyze panel and ambient temperature variations
 
-\- Identify factors influencing energy generation
+\- Compare fixed and tracker-based structures
 
-\- Generate actionable insights for solar plant analysis
+\- Evaluate capacity utilization
+
+\- Identify factors influencing solar energy generation
+
+\- Provide data-driven insights for solar plant performance analysis
+
+
+
+\---
 
 
 
@@ -36,77 +60,23 @@ The dashboard combines solar energy generation, irradiance, temperature, wind co
 
 
 
-\- Power BI
+\- \*\*Power BI\*\*
 
-\- DAX
+\- \*\*DAX\*\*
 
-\- Python
+\- \*\*Python\*\*
 
-\- Pandas
+\- \*\*Pandas\*\*
 
-\- Microsoft Excel
+\- \*\*Microsoft Excel\*\*
 
-\- Data Visualization
+\- \*\*Data Modeling\*\*
 
-
-
-\## 📈 Dashboard Pages
+\- \*\*Data Visualization\*\*
 
 
 
-\### Page 1 — Solar Plant Overview
-
-Provides an overall view of solar plant performance, energy generation, power and environmental conditions.
-
-
-
-\### Page 2 — Solar Energy Generation Analysis
-
-Analyzes energy generation trends, state-wise generation and plant-wise performance.
-
-
-
-\### Page 3 — Solar Resource \& Weather Analysis
-
-Analyzes irradiance, temperature and wind conditions affecting solar PV performance.
-
-
-
-\### Page 4 — Plant Performance \& Efficiency Analysis
-
-Compares plant performance, installed capacity, structure type and capacity utilization.
-
-
-
-\### Page 5 — Advanced Solar Plant Insights \& Recommendations
-
-Uses advanced Power BI visuals such as Decomposition Tree and Key Influencers to identify important patterns and factors affecting energy generation.
-
-
-
-\## 📊 Key Visualizations
-
-
-
-\- KPI Cards
-
-\- Line Charts
-
-\- Bar Charts
-
-\- Donut Charts
-
-\- Pie Charts
-
-\- Scatter Plots
-
-\- Azure Maps
-
-\- Gauge
-
-\- Decomposition Tree
-
-\- Key Influencers
+\---
 
 
 
@@ -114,49 +84,369 @@ Uses advanced Power BI visuals such as Decomposition Tree and Key Influencers to
 
 
 
-The project uses the BR-PVGen photovoltaic generation dataset.
+The project uses the \*\*BR-PVGen\*\* photovoltaic generation dataset.
 
 
 
-Dataset source:
+\### Dataset Details
+
+
+
+\- \*\*Data period:\*\* March 2024 – June 2025
+
+\- \*\*Time resolution:\*\* 15 minutes
+
+\- \*\*Number of PV plants:\*\* 51
+
+\- \*\*Generation data:\*\* AC power, DC power and reactive power
+
+\- \*\*Meteorological data:\*\* GHI, GRI, POA irradiance, temperature, wind and precipitation
+
+\- \*\*Plant metadata:\*\* installed capacity, number of panels, panel efficiency, structure type and bifacial information
+
+
+
+\### Dataset Source
+
+
+
+BR-PVGen photovoltaic generation dataset:
+
+
 
 https://zenodo.org/records/21511487
 
 
 
-The dataset contains photovoltaic plant generation, inverter and meteorological information.
+\---
 
 
 
-\## 🔍 Key Analysis
+\## 🧹 Data Preparation
 
 
 
-The dashboard provides insights into:
+The raw dataset was processed before visualization.
 
 
+
+\### Data Cleaning
+
+
+
+\- Combined multiple inverter data files
+
+\- Combined meteorological data files
+
+\- Converted datetime fields into a consistent format
+
+\- Converted numerical fields into appropriate data types
+
+\- Handled missing and invalid records
+
+\- Removed invalid negative power values
+
+\- Prepared plant metadata for analysis
+
+
+
+\### Tools Used for Preparation
+
+
+
+Python and Pandas were used for data preprocessing and cleaning.
+
+
+
+\---
+
+
+
+\## 🗂️ Data Model
+
+
+
+A star-schema-based Power BI data model was developed.
+
+
+
+\### Main Tables
+
+
+
+\- `Dim\_Plant`
+
+\- `Dim\_DateTime`
+
+\- `Cleaned\_Inverter\_Data`
+
+\- `Cleaned\_Meteorological\_Data`
+
+
+
+The dimension tables are used to filter and analyze the inverter and meteorological data.
+
+
+
+\---
+
+
+
+\## 📊 Dashboard Pages
+
+
+
+The Power BI report contains five analytical pages.
+
+
+
+\### 1️⃣ Solar Plant Overview
+
+
+
+Provides an overall view of solar plant performance using:
+
+
+
+\- KPI cards
 
 \- Plant-wise energy generation
 
-\- State-wise solar generation
+\- Energy and power trends
 
-\- Solar irradiance patterns
+\- Irradiance trends
 
-\- Panel and ambient temperature
+\- Plant and date filters
 
-\- Wind conditions
 
-\- Installed capacity
 
-\- Structure type
+\### 2️⃣ Solar Energy Generation Analysis
 
-\- Capacity utilization
+
+
+Focuses on energy generation patterns using:
+
+
+
+\- Total energy generation
+
+\- Energy generation trend
+
+\- Monthly generation analysis
+
+\- State-wise generation
+
+\- Plant performance comparison
+
+\- Azure Maps visualization
+
+
+
+\### 3️⃣ Solar Resource \& Weather Analysis
+
+
+
+Analyzes environmental conditions affecting solar generation:
+
+
+
+\- Irradiance distribution
+
+\- Irradiance vs energy generation
+
+\- State-wise installed capacity
+
+\- Panel vs ambient temperature
+
+\- Wind speed trend
+
+
+
+\### 4️⃣ Plant Performance \& Efficiency Analysis
+
+
+
+Evaluates plant performance using:
+
+
+
+\- Total energy generated
+
+\- Average panel temperature
+
+\- Energy generation by structure type
+
+\- Installed capacity vs energy generation
+
+\- Plant-wise generation
+
+\- Installed capacity by structure type
+
+\- Peak capacity utilization
+
+
+
+\### 5️⃣ Advanced Solar Plant Insights \& Recommendations
+
+
+
+Provides advanced analytical insights using:
+
+
+
+\- Best performing plant
+
+\- Top 10 performing plants
+
+\- Energy generation decomposition
+
+\- Key influencers
+
+\- Plant performance analysis
 
 \- Factors influencing energy generation
 
 
 
-\## 👩‍💻 Project Author
+\---
+
+
+
+\## 📸 Dashboard Preview
+
+
+
+\### Page 1 — Solar Plant Overview
+
+
+
+!\[Page 1](Screenshots/Page1\_Overview.png)
+
+
+
+\### Page 2 — Solar Energy Generation Analysis
+
+
+
+!\[Page 2](Screenshots/Page2\_Energy\_Generation.png)
+
+
+
+\### Page 3 — Solar Resource \& Weather Analysis
+
+
+
+!\[Page 3](Screenshots/Page3\_Weather\_Analysis.png)
+
+
+
+\### Page 4 — Plant Performance \& Efficiency Analysis
+
+
+
+!\[Page 4](Screenshots/Page4\_Performance\_Efficiency.png)
+
+
+
+\### Page 5 — Advanced Solar Plant Insights \& Recommendations
+
+
+
+!\[Page 5](Screenshots/Page5\_Advanced\_Insights.png)
+
+
+
+\---
+
+
+
+\## 📐 Key DAX Measures
+
+
+
+Important DAX measures used in the project include:
+
+
+
+\- Total AC Power (kW)
+
+\- Energy Generation (MWh)
+
+\- Peak AC Power (MW)
+
+\- Peak Capacity Utilization (%)
+
+\- Best Performing Plant
+
+
+
+These measures support KPI calculations, plant comparisons and advanced analysis.
+
+
+
+\---
+
+
+
+\## 🔍 Key Analytical Insights
+
+
+
+The dashboard enables analysis of:
+
+
+
+\- Differences in energy generation between solar plants
+
+\- State-wise generation patterns
+
+\- Relationship between solar irradiance and energy generation
+
+\- Temperature variations across the dataset
+
+\- Performance differences between fixed and tracker structures
+
+\- Installed capacity and energy generation relationships
+
+\- Plant capacity utilization
+
+\- Factors associated with higher energy generation
+
+
+
+\---
+
+
+
+\## 🚀 Future Improvements
+
+
+
+Potential future enhancements include:
+
+
+
+\- Real-time solar plant monitoring
+
+\- Automated Power BI data refresh
+
+\- Predictive energy generation models
+
+\- Machine learning-based performance prediction
+
+\- Solar plant anomaly detection
+
+\- Weather-based generation forecasting
+
+\- Automated performance alerts
+
+
+
+\---
+
+
+
+\## 👩‍💻 Author
 
 
 
@@ -164,5 +454,29 @@ The dashboard provides insights into:
 
 
 
-Power BI | Data Analytics | Electronics \& Communication Engineering
+Electronics \& Communication Engineering
+
+
+
+\### Project Focus
+
+
+
+\*\*Power BI | Data Analytics | DAX | Python | Solar Energy Analytics\*\*
+
+
+
+\---
+
+
+
+\## 📜 License
+
+
+
+This project is created for educational and portfolio purposes.
+
+
+
+The underlying BR-PVGen dataset is provided under its respective dataset license.
 
