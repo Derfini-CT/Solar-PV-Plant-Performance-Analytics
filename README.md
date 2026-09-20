@@ -2,6 +2,11 @@
 
 ### 📊 Power BI | Solar Energy | Data Analytics
 
+[![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![DAX](https://img.shields.io/badge/DAX-Data%20Analysis-blue?style=for-the-badge)](https://learn.microsoft.com/dax/)
+
 An interactive Power BI analytics platform designed to analyze solar photovoltaic (PV) plant performance, energy generation, weather conditions, and operational efficiency.
 
 The project transforms plant-level solar, inverter, and meteorological data into interactive dashboards to explore energy generation patterns, compare solar plants, analyze environmental conditions, and identify factors associated with energy generation.
@@ -22,6 +27,29 @@ The project transforms plant-level solar, inverter, and meteorological data into
 - 🗂️ Star-schema-based Power BI data model
 
 ---
+
+## 📌 Project Status
+
+| Category | Details |
+|---|---|
+| 📊 Project Type | Data Analytics & Business Intelligence |
+| ☀️ Domain | Solar Energy / Photovoltaic Systems |
+| 🛠️ Primary Tool | Microsoft Power BI |
+| 🧮 Analytics | DAX |
+| 🐍 Data Processing | Python & Pandas |
+| 📈 Visualization | Interactive Power BI Dashboards |
+| 📄 Dashboard Pages | 5 |
+| 📂 PV Plants Analyzed | 51 |
+| ⏱️ Data Resolution | 15 minutes |
+
+## 🔗 Quick Navigation
+
+- 📊 [Dashboard Preview](#-dashboard-preview)
+- 📐 [Key DAX Measures](#-key-dax-measures)
+- 📂 [Dataset](#-dataset)
+- 🧮 [Advanced Power BI Analytics](#-advanced-power-bi-analytics)
+- 📚 [Project Documentation](#-project-documentation)
+- 👩‍💻 [Author](#-author)
 
 ## 📌 Project Overview
 
