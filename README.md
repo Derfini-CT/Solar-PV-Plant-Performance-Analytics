@@ -155,3 +155,17 @@ The dimension tables provide filtering and analytical context for the fact table
                   ┌─────────────────┐
                   │  Dim_DateTime   │
                   └─────────────────┘
+
+---
+
+## 👩‍💻 Author
+
+### Derfini C T
+
+**Electronics & Communication Engineering**
+
+🔗 [LinkedIn](https://www.linkedin.com/in/derfini-c-t/)
+
+### Project Focus
+
+**Power BI | Data Analytics | DAX | Python | Solar Energy Analytics**
