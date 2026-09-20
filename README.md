@@ -1,3 +1,23 @@
+# ☀️ Solar PV Plant Performance & Efficiency Analytics
+
+### 📊 Power BI | Solar Energy | Data Analytics
+
+An interactive Power BI analytics platform designed to analyze solar photovoltaic (PV) plant performance, energy generation, weather conditions, and operational efficiency.
+
+The project transforms plant-level solar, inverter, and meteorological data into interactive dashboards that help explore energy generation patterns, plant performance, environmental conditions, and key factors influencing solar energy output.
+
+---
+
+## 🚀 Project Highlights
+
+- 📈 Solar energy generation and performance analysis
+- ☀️ Solar irradiance and weather analysis
+- 🌡️ Panel and ambient temperature monitoring
+- 🏭 Plant-wise performance comparison
+- ⚡ Installed capacity and energy generation analysis
+- 🔍 Key factors influencing energy generation
+- 📊 Interactive Power BI dashboards
+- 🧮 DAX-based analytical measures
 \# ☀️ Solar PV Plant Performance \& Efficiency Analytics Using Power BI
 
 
