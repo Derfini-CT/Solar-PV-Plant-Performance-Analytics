@@ -185,6 +185,176 @@ The dimension tables provide filtering and analytical context for the fact table
                   └─────────────────┘
 
 ```
+---
+
+## 📸 Dashboard Preview
+
+The Power BI report contains five interactive dashboard pages covering solar plant overview, energy generation, weather analysis, plant performance, and advanced solar insights.
+
+### 1️⃣ Solar Plant Overview
+
+Provides a high-level view of installed capacity, AC power, irradiance, temperature, and plant-wise energy generation.
+
+![Solar Plant Overview](Screenshots/Page1_Overview.png)
+
+---
+
+### 2️⃣ Solar Energy Generation Analysis
+
+Analyzes energy generation trends, monthly generation, state-wise distribution, and plant performance.
+
+![Solar Energy Generation Analysis](Screenshots/Page2_Energy_Generation.png)
+
+---
+
+### 3️⃣ Solar Resource & Weather Analysis
+
+Explores solar irradiance, temperature variations, wind conditions, and their relationship with energy generation.
+
+![Solar Resource & Weather Analysis](Screenshots/Page3_Weather_Analysis.png)
+
+---
+
+### 4️⃣ Plant Performance & Efficiency Analysis
+
+Compares plant performance using energy generation, installed capacity, structure type, and capacity utilization.
+
+![Plant Performance & Efficiency Analysis](Screenshots/Page4_Performance_Efficiency.png)
+
+---
+
+### 5️⃣ Advanced Solar Plant Insights
+
+Uses Key Influencers and Decomposition Tree visuals to explore factors associated with energy generation.
+
+![Advanced Solar Plant Insights](Screenshots/Page5_Advanced_Insights.png)
+
+---
+
+## 📐 Key DAX Measures
+
+The Power BI dashboard uses DAX measures to calculate important solar plant performance indicators.
+
+```DAX
+Total AC Power (kW) =
+DIVIDE(
+    SUM(Cleaned_Inverter_Data[total_active_power_w]),
+    1000
+)
+
+Energy Generation (MWh) =
+DIVIDE(
+    SUM(Cleaned_Inverter_Data[total_active_power_w]),
+    1000
+) * 0.25 / 1000
+
+Peak AC Power (MW) =
+DIVIDE(
+    MAXX(
+        VALUES(Dim_DateTime[datetime]),
+        CALCULATE(
+            SUM(Cleaned_Inverter_Data[total_active_power_w])
+        )
+    ),
+    1000000
+)
+
+Peak Capacity Utilization (%) =
+DIVIDE(
+    [Peak AC Power (MW)],
+    SUM(Dim_Plant[nominal_power_mw])
+) * 100
+
+Best Performing Plant =
+VAR PlantTable =
+    ADDCOLUMNS(
+        VALUES(Dim_Plant[ps_id]),
+        "PlantEnergy", [Energy Generation (MWh)]
+    )
+VAR TopPlant =
+    TOPN(
+        1,
+        PlantTable,
+        [PlantEnergy],
+        DESC
+    )
+RETURN
+    CONCATENATEX(
+        TopPlant,
+        Dim_Plant[ps_id],
+        ", "
+    )
+```
+
+---
+
+## 🧮 Advanced Power BI Analytics
+
+The project uses advanced Power BI analytical features to explore solar plant performance and identify factors associated with energy generation.
+
+### 🔍 Key Influencers
+
+The **Key Influencers** visual is used to analyze factors associated with **Energy Generation (MWh)**.
+
+The analysis considers:
+
+- Installed capacity (`nominal_power_mw`)
+- Structure type
+- Panel efficiency
+- Number of panels
+- Bifacial configuration
+
+This visual helps explore how different plant characteristics are associated with variations in energy generation.
+
+### 🌳 Decomposition Tree
+
+The **Decomposition Tree** is used to break down total energy generation across multiple dimensions.
+
+The analysis can be explored through:
+
+**Total Energy Generation → State → Structure Type → Solar Plant**
+
+This allows users to interactively drill down from overall generation to individual plant-level performance.
+
+### 📊 Advanced Analytical Features
+
+The Power BI report also uses:
+
+- Interactive slicers and filters
+- Drill-down analysis
+- KPI cards
+- Azure Maps
+- Key Influencers
+- Decomposition Tree
+- Scatter plot analysis
+- Dynamic plant-level comparisons
+
+These features transform the dashboard from a basic visualization report into an interactive analytical platform.
+
+---
+
+---
+
+## 📚 Project Documentation
+
+Detailed documentation of the project development process is available in the repository.
+
+The documentation covers:
+
+- 📌 Project overview and problem statement
+- 🎯 Project objectives
+- 🛠️ Tools and technologies used
+- 📂 Dataset details
+- 🧹 Data cleaning and preprocessing
+- 🗂️ Power BI data model and relationships
+- 🧮 DAX measures
+- 📊 Dashboard page descriptions
+- 🔍 Key analytical insights
+- 🚀 Future improvements
+
+📖 **[View Complete Project Documentation](Documentation/Project_Documentation.md)**
+
+---
 
 ## 👩‍💻 Author
 
