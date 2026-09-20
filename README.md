@@ -158,7 +158,7 @@ The dimension tables provide filtering and analytical context for the fact table
 
 ```
 
-'## 👩‍💻 Author'
+## 👩‍💻 Author
 
 ### Derfini C T
 
